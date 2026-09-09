@@ -33,8 +33,14 @@
       content="I build production-grade web and mobile applications with modern full-stack technologies."
     />
 
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      Icons. The .ico carries 16/32/48 raster frames for browsers that only
+      read ICO; the SVG is preferred where supported and stays crisp on any
+      display. Order matters: browsers take the last format they understand.
+    -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <!-- Fonts: Satoshi (headings) from Fontshare, Inter + JetBrains Mono (body/code) from Google -->

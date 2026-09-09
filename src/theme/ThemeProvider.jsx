@@ -1,8 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 const STORAGE_KEY = 'ay-theme';
-const TRANSITION_CLASS = 'theme-transition';
-const TRANSITION_MS = 560;
+const SWITCHING_CLASS = 'theme-switching';
 
 const ThemeContext = createContext({
   theme: 'light',
@@ -28,31 +27,50 @@ function readInitialTheme() {
 
 export function ThemeProvider({ children }) {
   const [theme, setThemeState] = useState(readInitialTheme);
+  // A ref, not state: nothing renders from it, and keeping it out of state
+  // means an explicit theme choice does not re-run the media-query effect.
   const hasChosenRef = useRef(false);
-  const timerRef = useRef(null);
 
-  /** Push the theme onto <html> and animate the swap. */
-  const applyTheme = useCallback((next, { animate = true } = {}) => {
+  /**
+   * Push the theme onto <html>.
+   *
+   * The swap is a single write to the root element — one class, one
+   * data-attribute, one colorScheme — which flips every CSS variable at once.
+   * No component below reads the theme to style itself, so a toggle costs one
+   * style recalc rather than a render pass over the tree.
+   *
+   * The flip is wrapped in `.theme-switching`, which suppresses every CSS
+   * transition on the page for the duration. Without it the swap starts
+   * thousands of concurrent colour transitions (see THEME SWITCHING in
+   * index.css) and the page visibly tears. Reading a computed colour between
+   * the flip and the unwrap forces the browser to commit the new values while
+   * transitions are still off, so removing the class cannot start any — and a
+   * colour read forces only a style recalc, where reading `offsetHeight` would
+   * force a full layout that a colour-only swap does not need.
+   *
+   * All of it runs synchronously from the click handler, so the paint does not
+   * wait on React to re-render the toggle.
+   */
+  const applyTheme = useCallback((next) => {
     const root = document.documentElement;
 
-    if (animate) {
-      root.classList.add(TRANSITION_CLASS);
-      window.clearTimeout(timerRef.current);
-      timerRef.current = window.setTimeout(() => root.classList.remove(TRANSITION_CLASS), TRANSITION_MS);
-    }
+    root.classList.add(SWITCHING_CLASS);
 
     root.classList.toggle('dark', next === 'dark');
     root.style.colorScheme = next;
     root.setAttribute('data-theme', next);
+
+    void getComputedStyle(root).backgroundColor; // commit, transitions still off
+    root.classList.remove(SWITCHING_CLASS);
 
     // Keep the mobile browser chrome in sync with the page background.
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', next === 'dark' ? '#050816' : '#F8FAFC');
   }, []);
 
-  // Sync on mount without animating (avoids a flash on first paint).
+  // Reconcile with whatever the pre-paint script in index.html decided.
   useEffect(() => {
-    applyTheme(theme, { animate: false });
+    applyTheme(theme);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -96,8 +114,6 @@ export function ThemeProvider({ children }) {
     query.addEventListener('change', handleChange);
     return () => query.removeEventListener('change', handleChange);
   }, [applyTheme]);
-
-  useEffect(() => () => window.clearTimeout(timerRef.current), []);
 
   const value = useMemo(
     () => ({ theme, isDark: theme === 'dark', toggleTheme, setTheme }),

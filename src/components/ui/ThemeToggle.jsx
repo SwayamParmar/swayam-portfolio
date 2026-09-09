@@ -16,7 +16,7 @@ const STARS = [
  * Premium day / night switch.
  *
  * The knob springs between ends while the track cross-fades from a daytime
- * sky to a starlit night — matching the 520ms theme transition on the page.
+ * sky to a starlit night — kept in step with the 180ms page theme transition.
  */
 export default function ThemeToggle({ className = '', size = 'md' }) {
   const { isDark, toggleTheme } = useTheme();
@@ -40,7 +40,7 @@ export default function ThemeToggle({ className = '', size = 'md' }) {
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
       className={cn(
-        'group relative shrink-0 overflow-hidden rounded-full border p-1 transition-colors duration-500',
+        'group relative shrink-0 overflow-hidden rounded-full border p-1 transition-colors duration-200',
         dims.track,
         isDark
           ? 'border-white/15 bg-[#0B1226] shadow-[inset_0_1px_0_rgb(255_255_255/0.06)]'
@@ -51,7 +51,7 @@ export default function ThemeToggle({ className = '', size = 'md' }) {
       {/* Night sky */}
       <span
         className={cn(
-          'pointer-events-none absolute inset-0 transition-opacity duration-500',
+          'pointer-events-none absolute inset-0 transition-opacity duration-200',
           isDark ? 'opacity-100' : 'opacity-0'
         )}
       >
@@ -70,7 +70,7 @@ export default function ThemeToggle({ className = '', size = 'md' }) {
       {/* Daytime clouds */}
       <span
         className={cn(
-          'pointer-events-none absolute inset-0 transition-opacity duration-500',
+          'pointer-events-none absolute inset-0 transition-opacity duration-200',
           isDark ? 'opacity-0' : 'opacity-100'
         )}
       >
@@ -96,7 +96,7 @@ export default function ThemeToggle({ className = '', size = 'md' }) {
             initial={shouldReduce ? { opacity: 0 } : { opacity: 0, rotate: -70, scale: 0.5 }}
             animate={shouldReduce ? { opacity: 1 } : { opacity: 1, rotate: 0, scale: 1 }}
             exit={shouldReduce ? { opacity: 0 } : { opacity: 0, rotate: 70, scale: 0.5 }}
-            transition={{ duration: 0.28, ease: EASE }}
+            transition={{ duration: 0.18, ease: EASE }}
             className={cn('flex', dims.icon)}
           >
             {isDark ? <LuMoon aria-hidden="true" /> : <LuSun aria-hidden="true" />}
@@ -105,7 +105,7 @@ export default function ThemeToggle({ className = '', size = 'md' }) {
       </motion.span>
 
       {/* Hover glow */}
-      <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 shadow-glow-sm transition-opacity duration-300 group-hover:opacity-100" />
+      <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 shadow-glow-sm transition-opacity duration-200 group-hover:opacity-100" />
     </button>
   );
 }

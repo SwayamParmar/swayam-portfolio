@@ -3,42 +3,31 @@ import { profile } from '../../data/site';
 import cn from '../../lib/cn';
 
 /**
- * Monogram mark — a gradient-stroked "A" inside a soft glass tile.
- * Used in the navbar, footer and mobile menu.
+ * Monogram mark — the initials from `profile` in the brand gradient, inside a
+ * soft glass tile. Matches the favicon. Used in the navbar, footer and menu.
  */
 export function LogoMark({ className = '', size = 'md' }) {
-  const dims = {
-    sm: 'h-8 w-8 rounded-lg',
-    md: 'h-9 w-9 rounded-xl',
-    lg: 'h-11 w-11 rounded-2xl',
+  const { tile, text } = {
+    sm: { tile: 'h-8 w-8 rounded-lg', text: 'text-[11px]' },
+    md: { tile: 'h-9 w-9 rounded-xl', text: 'text-[13px]' },
+    lg: { tile: 'h-11 w-11 rounded-2xl', text: 'text-base' },
   }[size];
 
   return (
     <span
       className={cn(
         'relative grid shrink-0 place-items-center overflow-hidden border border-primary/25 bg-card',
-        dims,
+        tile,
         className
       )}
     >
       <span className="absolute inset-0 bg-brand-gradient-soft" aria-hidden="true" />
-      <svg viewBox="0 0 24 24" className="relative h-[58%] w-[58%]" fill="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="ay-logo-gradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#A78BFA" />
-            <stop offset="55%" stopColor="#6366F1" />
-            <stop offset="100%" stopColor="#22D3EE" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M3.5 20.5 12 3.5l8.5 17"
-          stroke="url(#ay-logo-gradient)"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path d="M7.6 14.4h8.8" stroke="url(#ay-logo-gradient)" strokeWidth="2.2" strokeLinecap="round" />
-      </svg>
+      <span
+        className={cn('relative font-display font-black leading-none tracking-tight text-gradient-static', text)}
+        aria-hidden="true"
+      >
+        {profile.initials}
+      </span>
     </span>
   );
 }

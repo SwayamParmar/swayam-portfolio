@@ -1,10 +1,34 @@
 {
-  "short_name": "Aman Yadav",
-  "name": "Aman Yadav — React Native & Full Stack Developer",
+  "short_name": "Swayam Parmar",
+  "name": "Swayam Parmar — Full Stack Developer",
   "icons": [
-    { "src": "favicon.ico", "sizes": "64x64 32x32 24x24 16x16", "type": "image/x-icon" },
-    { "src": "logo192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "logo512.png", "type": "image/png", "sizes": "512x512" }
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48 32x32 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
   ],
   "start_url": ".",
   "display": "standalone",

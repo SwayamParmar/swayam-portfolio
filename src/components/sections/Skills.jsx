@@ -113,15 +113,6 @@ function SkillCard({ skill, index }) {
           {skill.category}
         </span>
       </div>
-      {/* <div className="relative mt-4 h-2 w-full overflow-hidden rounded-full bg-canvas-alt">
-        <motion.span
-          className="absolute inset-y-0 left-0 w-2/3 rounded-full"
-          style={{ background: `linear-gradient(90deg, ${skill.color}, #8B5CF6)` }}
-          initial={{ scaleX: 0, originX: 0 }}
-          animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
-          transition={shouldReduce ? { duration: 0.001 } : { duration: 0.8, ease: EASE, delay: 0.12 + Math.min(index * 0.04, 0.25) }}
-        />
-      </div> */}
     </motion.li>
   );
 }
