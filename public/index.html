@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>Swayam Parmar — Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Swayam Parmar — Full Stack Developer building production-grade web and mobile applications with React, TypeScript, Node.js, Laravel, and React Native."
+    />
+    <meta name="author" content="Swayam Parmar" />
+    <meta
+      name="keywords"
+      content="Swayam Parmar, Full Stack Developer, React, TypeScript, Node.js, Laravel, React Native, Portfolio"
+    />
+
+    <!-- Theme colour follows the active mode (updated at runtime by ThemeProvider) -->
+    <meta name="theme-color" content="#F8FAFC" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Swayam Parmar — Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="I build production-grade web and mobile applications with modern full-stack technologies."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Swayam Parmar — Full Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="I build production-grade web and mobile applications with modern full-stack technologies."
+    />
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Fonts: Satoshi (headings) from Fontshare, Inter + JetBrains Mono (body/code) from Google -->
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      No-flash theme bootstrap.
+      Applies the saved (or system) theme to <html> *before* first paint so the
+      page never flashes the wrong background.
+    -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('ay-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored === 'light' || stored === 'dark' ? stored : prefersDark ? 'dark' : 'light';
+          document.documentElement.classList.toggle('dark', theme === 'dark');
+          document.documentElement.style.colorScheme = theme;
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          /* localStorage unavailable — fall back to the light default */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to view this portfolio.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
