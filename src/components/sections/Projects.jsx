@@ -12,9 +12,9 @@ import SmartImage from '../ui/SmartImage';
 import useScrollLock from '../../hooks/useScrollLock';
 
 const ACCENT_RING = {
-  purple: 'shadow-[0_28px_60px_-32px_rgb(139_92_246/0.75)]',
-  blue: 'shadow-[0_28px_60px_-32px_rgb(59_130_246/0.7)]',
-  cyan: 'shadow-[0_28px_60px_-32px_rgb(34_211_238/0.7)]',
+  teal: 'shadow-[0_28px_60px_-32px_rgb(20_184_166/0.75)]',
+  emerald: 'shadow-[0_28px_60px_-32px_rgb(16_185_129/0.7)]',
+  amber: 'shadow-[0_28px_60px_-32px_rgb(245_158_11/0.7)]',
 };
 
 export default function Projects() {
@@ -105,7 +105,7 @@ function ProjectCard({ project, index, onOpen }) {
       transition={{ duration: DURATION.base, ease: EASE, delay: Math.min(index * 0.05, 0.2) }}
       className={cn(
         'gradient-ring group surface-card surface-card-hover relative flex flex-col overflow-hidden',
-        ACCENT_RING[project.accent]
+        (ACCENT_RING[project.accent] ?? ACCENT_RING.teal)
       )}
     >
       {/* ---- Media ---- */}

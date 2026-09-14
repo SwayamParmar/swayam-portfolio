@@ -325,9 +325,9 @@ function PaperPlane({ shouldReduce }) {
     >
       <defs>
         <linearGradient id="plane-path" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0" />
-          <stop offset="50%" stopColor="#6366F1" stopOpacity="0.85" />
-          <stop offset="100%" stopColor="#22D3EE" stopOpacity="0.9" />
+          <stop offset="0%" stopColor="#0D9488" stopOpacity="0" />
+          <stop offset="50%" stopColor="#10B981" stopOpacity="0.85" />
+          <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.9" />
         </linearGradient>
       </defs>
 
@@ -342,7 +342,7 @@ function PaperPlane({ shouldReduce }) {
 
       {!shouldReduce && (
         <g>
-          <path d="M0 -7 L11 0 L0 7 L3 0 Z" fill="#8B5CF6">
+          <path d="M0 -7 L11 0 L0 7 L3 0 Z" fill="#0D9488">
             <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1">
               <mpath href="#flight-path" />
             </animateMotion>

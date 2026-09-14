@@ -44,7 +44,7 @@ export default function ThemeToggle({ className = '', size = 'md' }) {
         dims.track,
         isDark
           ? 'border-white/15 bg-[#0B1226] shadow-[inset_0_1px_0_rgb(255_255_255/0.06)]'
-          : 'border-sky-200/80 bg-gradient-to-b from-sky-100 to-sky-200/70',
+          : 'border-emerald-200/80 bg-gradient-to-b from-emerald-100 to-emerald-200/70',
         className
       )}
     >
@@ -64,7 +64,7 @@ export default function ThemeToggle({ className = '', size = 'md' }) {
             transition={{ duration: 2.6, repeat: Infinity, delay: star.delay, ease: 'easeInOut' }}
           />
         ))}
-        <span className="absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,rgb(139_92_246/0.35),transparent_65%)]" />
+        <span className="absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,rgb(20_184_166/0.35),transparent_65%)]" />
       </span>
 
       {/* Daytime clouds */}
@@ -84,7 +84,7 @@ export default function ThemeToggle({ className = '', size = 'md' }) {
           'relative z-10 flex items-center justify-center rounded-full',
           dims.knob,
           isDark
-            ? 'bg-gradient-to-br from-brand-400 to-sky-500 text-white shadow-[0_2px_12px_rgb(139_92_246/0.75)]'
+            ? 'bg-gradient-to-br from-brand-400 to-emerald-500 text-white shadow-[0_2px_12px_rgb(20_184_166/0.75)]'
             : 'bg-gradient-to-br from-amber-300 to-orange-400 text-white shadow-[0_2px_10px_rgb(251_146_60/0.65)]'
         )}
         animate={{ x: isDark ? dims.travel : 0 }}

@@ -51,8 +51,8 @@ export default function BackToTop() {
             />
             <defs>
               <linearGradient id="back-to-top-gradient" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#8B5CF6" />
-                <stop offset="100%" stopColor="#22D3EE" />
+                <stop offset="0%" stopColor="#14B8A6" />
+                <stop offset="100%" stopColor="#F59E0B" />
               </linearGradient>
             </defs>
           </svg>

@@ -1,4 +1,4 @@
-import { useId, useMemo } from 'react';
+import { useMemo } from 'react';
 import cn from '../../lib/cn';
 
 /**
@@ -28,15 +28,14 @@ function wavePath(period, amplitude, baseline) {
 
 /* Each period divides TILE_W exactly, which is what keeps the loop seamless. */
 const LAYERS = [
-  { key: 'back', period: 720, amplitude: 26, baseline: 62, opacity: 0.5, animation: 'animate-wave-slow' },
-  { key: 'mid', period: 360, amplitude: 17, baseline: 76, opacity: 0.7, animation: 'animate-wave-mid' },
-  { key: 'front', period: 240, amplitude: 11, baseline: 90, opacity: 1, animation: 'animate-wave-fast' },
+  { key: 'back', period: 720, amplitude: 24, baseline: 62, opacity: 0.4, animation: 'animate-wave-slow' },
+  { key: 'mid', period: 360, amplitude: 15, baseline: 78, opacity: 0.55, animation: 'animate-wave-mid' },
 ];
 
 /**
- * The signature purple/blue wave that closes every section.
- * Three layers drift at different speeds; `--wave-opacity` keeps it subtle in
- * light mode and slightly more present in dark mode.
+ * A calm, flat-teal wave that closes every section. Two layers drift slowly;
+ * `--wave-opacity` keeps it subtle in light mode and slightly more present in
+ * dark mode. Single hue — no gradient — so it reads as paper, not a rainbow.
  */
 export default function WaveDivider({
   className = '',
@@ -44,7 +43,6 @@ export default function WaveDivider({
   flip = false,
   showLine = true,
 }) {
-  const gradientId = useId();
   const paths = useMemo(
     () => LAYERS.map((layer) => ({ ...layer, d: wavePath(layer.period, layer.amplitude, layer.baseline) })),
     []
@@ -56,7 +54,7 @@ export default function WaveDivider({
       className={cn('pointer-events-none relative w-full overflow-hidden', height, flip && 'rotate-180', className)}
       style={{ opacity: 'var(--wave-opacity)' }}
     >
-      {paths.map((layer, index) => (
+      {paths.map((layer) => (
         <svg
           key={layer.key}
           className={cn('absolute inset-y-0 left-0 h-full w-[200%] gpu', layer.animation)}
@@ -64,15 +62,7 @@ export default function WaveDivider({
           preserveAspectRatio="none"
           focusable="false"
         >
-          <defs>
-            <linearGradient id={`${gradientId}-${index}`} x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#8B5CF6" />
-              <stop offset="35%" stopColor="#6366F1" />
-              <stop offset="70%" stopColor="#3B82F6" />
-              <stop offset="100%" stopColor="#22D3EE" />
-            </linearGradient>
-          </defs>
-          <path d={layer.d} fill={`url(#${gradientId}-${index})`} opacity={layer.opacity} />
+          <path d={layer.d} fill="#14B8A6" opacity={layer.opacity} />
         </svg>
       ))}
 

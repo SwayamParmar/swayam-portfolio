@@ -3,17 +3,17 @@
 
   <defs>
     <linearGradient id="hg-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.20"/>
-      <stop offset="55%" stop-color="#6366F1" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.18"/>
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.20"/>
+      <stop offset="55%" stop-color="#0D9488" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0.18"/>
     </linearGradient>
     <radialGradient id="hg-glow" cx="50%" cy="42%" r="55%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.42"/>
-      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="hg-screen-spill" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="hg-screen" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#141E3C"/>
@@ -45,17 +45,17 @@
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05"/>
     </linearGradient>
     <linearGradient id="hg-accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#A78BFA"/>
-      <stop offset="60%" stop-color="#60A5FA"/>
-      <stop offset="100%" stop-color="#22D3EE"/>
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="60%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#2DD4BF"/>
     </linearGradient>
   </defs>
 
   <!-- ambient backdrop -->
   <rect x="40" y="30" width="640" height="540" rx="48" fill="url(#hg-bg)"/>
   <ellipse cx="360" cy="290" rx="290" ry="230" fill="url(#hg-glow)"/>
-  <circle cx="360" cy="290" r="238" stroke="#8B5CF6" stroke-opacity="0.16" stroke-width="1.5" stroke-dasharray="6 10"/>
-  <circle cx="360" cy="290" r="180" stroke="#22D3EE" stroke-opacity="0.12" stroke-width="1.5"/>
+  <circle cx="360" cy="290" r="238" stroke="#14B8A6" stroke-opacity="0.16" stroke-width="1.5" stroke-dasharray="6 10"/>
+  <circle cx="360" cy="290" r="180" stroke="#2DD4BF" stroke-opacity="0.12" stroke-width="1.5"/>
 
   <!-- ================= monitor (left, on the desk) ================= -->
   <ellipse cx="221" cy="292" rx="180" ry="130" fill="url(#hg-screen-spill)" opacity="0.5"/>
@@ -70,21 +70,21 @@
     <circle cx="150" cy="230" r="4" fill="#34D399"/>
 
     <g>
-      <rect x="120" y="256" width="42" height="7" rx="3.5" fill="#A78BFA"/>
-      <rect x="170" y="256" width="76" height="7" rx="3.5" fill="#60A5FA"/>
+      <rect x="120" y="256" width="42" height="7" rx="3.5" fill="#2DD4BF"/>
+      <rect x="170" y="256" width="76" height="7" rx="3.5" fill="#2DD4BF"/>
       <rect x="254" y="256" width="30" height="7" rx="3.5" fill="#43527A"/>
 
-      <rect x="132" y="276" width="58" height="7" rx="3.5" fill="#22D3EE"/>
+      <rect x="132" y="276" width="58" height="7" rx="3.5" fill="#2DD4BF"/>
       <rect x="198" y="276" width="96" height="7" rx="3.5" fill="#43527A"/>
 
-      <rect x="132" y="296" width="34" height="7" rx="3.5" fill="#F0ABFC"/>
+      <rect x="132" y="296" width="34" height="7" rx="3.5" fill="#5EEAD4"/>
       <rect x="174" y="296" width="64" height="7" rx="3.5" fill="#43527A"/>
       <rect x="246" y="296" width="44" height="7" rx="3.5" fill="#34D399"/>
 
       <rect x="144" y="316" width="82" height="7" rx="3.5" fill="#43527A"/>
-      <rect x="234" y="316" width="40" height="7" rx="3.5" fill="#60A5FA"/>
+      <rect x="234" y="316" width="40" height="7" rx="3.5" fill="#2DD4BF"/>
 
-      <rect x="120" y="336" width="52" height="7" rx="3.5" fill="#A78BFA"/>
+      <rect x="120" y="336" width="52" height="7" rx="3.5" fill="#2DD4BF"/>
       <rect x="180" y="336" width="72" height="7" rx="3.5" fill="#43527A"/>
     </g>
 
@@ -104,7 +104,7 @@
     <!-- torso -->
     <path d="M356 490c-6-72 26-116 74-116s80 44 74 116z" fill="url(#hg-hoodie)"/>
     <path d="M404 380c16-6 36-6 52 0l-8 34c-12-5-24-5-36 0z" fill="url(#hg-hoodie-light)"/>
-    <path d="M410 378l20 26 20-26" stroke="#7C6BB8" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M410 378l20 26 20-26" stroke="#14B8A6" stroke-width="3" fill="none" stroke-linecap="round"/>
 
     <!-- head -->
     <ellipse cx="430" cy="294" rx="47" ry="51" fill="#F4C7A4"/>
@@ -115,7 +115,7 @@
     <path d="M382 292c-2-38 20-58 48-58s48 20 48 52c0 8-2 14-4 18-3-20-13-30-30-34-20-5-40 0-50 12-5 6-9 10-12 10z" fill="#1E1B34"/>
 
     <!-- glasses -->
-    <g stroke="#2B3350" stroke-width="3.5" fill="#BFDBFE" fill-opacity="0.35">
+    <g stroke="#2B3350" stroke-width="3.5" fill="#CCFBF1" fill-opacity="0.35">
       <rect x="394" y="286" width="30" height="23" rx="8"/>
       <rect x="432" y="286" width="30" height="23" rx="8"/>
       <path d="M424 296h8" fill="none"/>
@@ -133,7 +133,7 @@
 
   <!-- ================= laptop (in front of the person) ================= -->
   <g>
-    <ellipse cx="430" cy="470" rx="130" ry="26" fill="#22D3EE" opacity="0.12"/>
+    <ellipse cx="430" cy="470" rx="130" ry="26" fill="#2DD4BF" opacity="0.12"/>
     <path d="M356 456l16-104h116l16 104z" fill="url(#hg-lid)"/>
     <path d="M372 358h100l12 92H360z" fill="#3B456B" opacity="0.55"/>
     <circle cx="430" cy="404" r="13" fill="url(#hg-accent)" opacity="0.9"/>
@@ -154,41 +154,41 @@
   <g>
     <path d="M600 456v-30" stroke="#34D399" stroke-width="3" stroke-linecap="round"/>
     <path d="M600 432c-16-6-22-22-18-34 14 2 24 14 24 28z" fill="#34D399" opacity="0.9"/>
-    <path d="M600 438c14-8 18-24 13-35-13 4-21 17-19 31z" fill="#22D3EE" opacity="0.75"/>
+    <path d="M600 438c14-8 18-24 13-35-13 4-21 17-19 31z" fill="#2DD4BF" opacity="0.75"/>
     <path d="M584 456h34l-5 30h-24z" fill="#4A5578"/>
   </g>
 
   <!-- notebook -->
   <g opacity="0.9">
     <rect x="112" y="470" width="70" height="16" rx="4" fill="#3D4A78"/>
-    <rect x="112" y="470" width="70" height="5" rx="2.5" fill="#A78BFA" opacity="0.8"/>
+    <rect x="112" y="470" width="70" height="5" rx="2.5" fill="#2DD4BF" opacity="0.8"/>
   </g>
 
   <!-- ================= floating UI cards ================= -->
   <g>
-    <rect x="496" y="106" width="152" height="80" rx="18" fill="url(#hg-card)" stroke="#A78BFA" stroke-opacity="0.45"/>
+    <rect x="496" y="106" width="152" height="80" rx="18" fill="url(#hg-card)" stroke="#2DD4BF" stroke-opacity="0.45"/>
     <rect x="514" y="124" width="22" height="22" rx="7" fill="url(#hg-accent)"/>
-    <rect x="546" y="126" width="64" height="8" rx="4" fill="#C7D2FE" fill-opacity="0.9"/>
+    <rect x="546" y="126" width="64" height="8" rx="4" fill="#CBD5E1" fill-opacity="0.9"/>
     <rect x="546" y="139" width="42" height="7" rx="3.5" fill="#94A3B8" fill-opacity="0.7"/>
     <rect x="514" y="158" width="116" height="7" rx="3.5" fill="#94A3B8" fill-opacity="0.45"/>
     <rect x="514" y="171" width="80" height="7" rx="3.5" fill="#94A3B8" fill-opacity="0.3"/>
   </g>
 
   <g>
-    <rect x="62" y="96" width="146" height="70" rx="18" fill="url(#hg-card)" stroke="#22D3EE" stroke-opacity="0.45"/>
+    <rect x="62" y="96" width="146" height="70" rx="18" fill="url(#hg-card)" stroke="#2DD4BF" stroke-opacity="0.45"/>
     <rect x="80" y="112" width="48" height="7" rx="3.5" fill="#94A3B8" fill-opacity="0.65"/>
     <path d="M80 148l24-22 18 14 20-24 24 20" stroke="url(#hg-accent)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <circle cx="166" cy="136" r="4" fill="#22D3EE"/>
+    <circle cx="166" cy="136" r="4" fill="#2DD4BF"/>
   </g>
 
   <!-- sparkles -->
-  <g fill="#A78BFA">
+  <g fill="#2DD4BF">
     <circle cx="368" cy="132" r="3" opacity="0.7"/>
     <circle cx="662" cy="286" r="3.5" opacity="0.6"/>
     <circle cx="86" cy="376" r="2.5" opacity="0.5"/>
     <circle cx="470" cy="196" r="2.5" opacity="0.55"/>
   </g>
-  <g fill="#22D3EE">
+  <g fill="#2DD4BF">
     <circle cx="668" cy="196" r="3" opacity="0.6"/>
     <circle cx="60" cy="256" r="2.5" opacity="0.5"/>
     <circle cx="330" cy="152" r="3" opacity="0.45"/>

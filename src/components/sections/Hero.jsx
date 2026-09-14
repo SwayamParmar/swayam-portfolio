@@ -15,8 +15,8 @@ const STAT_ICONS = { box: LuBox, smile: LuSmile, calendar: LuCalendar, trophy: L
 const STAT_TINTS = {
   box: 'from-brand-500/20 to-brand-500/5 text-brand-500',
   smile: 'from-emerald-500/20 to-emerald-500/5 text-emerald-500',
-  calendar: 'from-sky-500/20 to-sky-500/5 text-sky-500',
-  trophy: 'from-amber-500/20 to-amber-500/5 text-amber-500',
+  calendar: 'from-emerald-500/20 to-emerald-500/5 text-emerald-500',
+  trophy: 'from-amber-400/20 to-amber-400/5 text-amber-500',
 };
 
 export default function Hero() {
@@ -44,9 +44,6 @@ export default function Hero() {
           <motion.div variants={container} initial="hidden" animate="show" className="max-w-xl">
             <motion.div variants={item}>
               <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-content-muted">
-                <span className="text-base" aria-hidden="true">
-                  👋
-                </span>
                 {profile.greeting}
               </span>
             </motion.div>
@@ -215,8 +212,8 @@ function HeroVisual({ shouldReduce }) {
           className="glass absolute -bottom-5 left-[-6%] hidden rounded-2xl px-4 py-3 shadow-card sm:block"
         >
           <p className="font-mono text-[11px] leading-relaxed text-content-muted">
-            <span className="text-brand-500">const</span> dev <span className="text-sky-500">=</span>{' '}
-            <span className="text-cyan-500">"Swayam"</span>
+            <span className="text-brand-500">const</span> dev <span className="text-emerald-500">=</span>{' '}
+            <span className="text-amber-500">"Swayam"</span>
             <span className="ml-0.5 inline-block h-3 w-[2px] translate-y-0.5 animate-caret-blink bg-primary align-middle" />
           </p>
         </motion.div>

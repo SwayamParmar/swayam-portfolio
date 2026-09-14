@@ -27,9 +27,9 @@ const STRENGTH_ICONS = { puzzle: LuPuzzle, target: LuTarget, sparkles: LuSparkle
 const SERVICE_ICONS = { phone: LuSmartphone, server: LuServer, palette: LuPalette, gauge: LuGauge };
 
 const ACCENT_STYLES = {
-  purple: 'from-brand-500/20 to-brand-500/5 text-brand-500 group-hover:shadow-glow-sm',
-  blue: 'from-sky-500/20 to-sky-500/5 text-sky-500',
-  cyan: 'from-cyan-400/20 to-cyan-400/5 text-cyan-500',
+  teal: 'from-brand-500/20 to-brand-500/5 text-brand-500 group-hover:shadow-glow-sm',
+  emerald: 'from-emerald-500/20 to-emerald-500/5 text-emerald-500',
+  amber: 'from-amber-400/20 to-amber-400/5 text-amber-500',
 };
 
 export default function About() {
@@ -200,7 +200,7 @@ export default function About() {
                 <span
                   className={cn(
                     'relative grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br text-xl transition-shadow duration-300',
-                    ACCENT_STYLES[service.accent] ?? ACCENT_STYLES.purple
+                    ACCENT_STYLES[service.accent] ?? ACCENT_STYLES.teal
                   )}
                 >
                   <Icon aria-hidden="true" />

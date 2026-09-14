@@ -31,7 +31,7 @@ export default function AmbientBackground({
       />
       <span
         className={cn(
-          'glow-blob right-[-14%] top-[6%] h-[30rem] w-[30rem] bg-sky-500/50',
+          'glow-blob right-[-14%] top-[6%] h-[30rem] w-[30rem] bg-emerald-500/50',
           !shouldReduce && 'animate-blob-drift'
         )}
         style={{ animationDelay: '-6s' }}
@@ -39,7 +39,7 @@ export default function AmbientBackground({
       {!soft && (
         <span
           className={cn(
-            'glow-blob bottom-[-16%] left-[32%] h-[28rem] w-[28rem] bg-cyan-400/40',
+            'glow-blob bottom-[-16%] left-[32%] h-[28rem] w-[28rem] bg-brand-400/35',
             !shouldReduce && 'animate-blob-drift'
           )}
           style={{ animationDelay: '-11s' }}
@@ -54,8 +54,8 @@ export default function AmbientBackground({
         <>
           {/* Kept clear of the headline band so nothing reads as a strikethrough. */}
           <div className="absolute left-0 top-[8%] h-px w-full bg-gradient-to-r from-transparent via-brand-500/20 to-transparent" />
-          <div className="absolute left-0 top-[78%] h-px w-full bg-gradient-to-r from-transparent via-cyan-400/18 to-transparent" />
-          <div className="absolute left-[8%] top-0 h-full w-px bg-gradient-to-b from-transparent via-sky-500/12 to-transparent" />
+          <div className="absolute left-0 top-[78%] h-px w-full bg-gradient-to-r from-transparent via-amber-400/18 to-transparent" />
+          <div className="absolute left-[8%] top-0 h-full w-px bg-gradient-to-b from-transparent via-emerald-500/12 to-transparent" />
           <div className="absolute right-[6%] top-0 h-full w-px bg-gradient-to-b from-transparent via-brand-500/12 to-transparent" />
         </>
       )}

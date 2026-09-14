@@ -37,7 +37,7 @@ export default function Experience() {
         <motion.div
           aria-hidden="true"
           style={{ scaleY: shouldReduce ? 1 : lineProgress }}
-          className="absolute bottom-0 left-[15px] top-2 w-px origin-top bg-gradient-to-b from-brand-500 via-sky-500 to-cyan-400 lg:left-1/2 lg:-translate-x-1/2"
+          className="absolute bottom-0 left-[15px] top-2 w-px origin-top bg-gradient-to-b from-brand-500 via-emerald-500 to-amber-400 lg:left-1/2 lg:-translate-x-1/2"
         />
 
         <ol className="space-y-8 lg:space-y-2">

@@ -12,7 +12,7 @@ export default function Footer() {
       {/* Ambient wash */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <span className="glow-blob -left-20 -top-24 h-72 w-72 bg-brand-500/40" />
-        <span className="glow-blob -right-24 bottom-[-6rem] h-72 w-72 bg-cyan-400/35" />
+        <span className="glow-blob -right-24 bottom-[-6rem] h-72 w-72 bg-brand-400/30" />
       </div>
 
       <div className="shell relative z-10 py-14 lg:py-16">

@@ -34,7 +34,7 @@ export default function Section({
             <span className="glow-blob -left-24 top-10 h-[26rem] w-[26rem] bg-brand-500/45" />
           )}
           {(glow === 'right' || glow === 'both') && (
-            <span className="glow-blob -right-28 bottom-0 h-[24rem] w-[24rem] bg-sky-500/40" />
+            <span className="glow-blob -right-28 bottom-0 h-[24rem] w-[24rem] bg-emerald-500/40" />
           )}
         </div>
       )}
