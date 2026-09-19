@@ -22,7 +22,8 @@ export default function Navbar() {
   const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 26, restDelta: 0.001 });
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
-    setScrolled(latest > 16);
+    const next = latest > 16;
+    setScrolled((current) => (current === next ? current : next));
   });
 
   useScrollLock(menuOpen);

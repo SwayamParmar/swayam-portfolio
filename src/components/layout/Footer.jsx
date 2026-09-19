@@ -1,4 +1,4 @@
-import { LuArrowUpRight, LuHeart } from 'react-icons/lu';
+import { LuArrowUpRight } from 'react-icons/lu';
 import { footer, profile, navLinks } from '../../data/site';
 import Logo from '../ui/Logo';
 import SocialLinks from '../ui/SocialLinks';
@@ -84,11 +84,6 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
           <p className="text-xs text-content-subtle">
             © {year} {profile.name}. All rights reserved.
-          </p>
-
-          <p className="flex items-center gap-1.5 text-xs text-content-subtle">
-            {footer.builtWith}
-            <LuHeart className="text-rose-500" aria-hidden="true" />
           </p>
 
           <ul className="flex items-center gap-5">

@@ -113,8 +113,8 @@ export const skills = [
 export const skillHighlights = [
   { id: 'stack', value: 'Web + mobile', label: 'Product surfaces' },
   { id: 'realtime', value: 'Real-time', label: 'Systems experience' },
-  { id: 'api', value: '30%', label: 'API response improvement' },
-  { id: 'load', value: '35%', label: 'Page load improvement' },
+  { id: 'api', value: '~30%', label: 'API response improvement' },
+  { id: 'load', value: '~35%', label: 'Page load improvement' },
 ];
 
 export const experience = [
@@ -149,7 +149,7 @@ export const projects = [
     summary: 'Production-scale global job portal and gig marketplace supporting dual-role workflows for employers and job seekers.',
     description: 'Developed and enhanced a production-scale global job portal and gig marketplace with React.js, Laravel and MySQL. Built dual-role dashboards, real-time chat with Pusher and Laravel Echo, and secure escrow-based payment workflows. Integrated third-party AI recommendation APIs into the backend to improve user engagement and platform traffic, and optimized MySQL query performance through composite indexing and N+1 query elimination.',
     image: '/assets/images/project-commerce-dashboard.svg', accent: 'teal', technologies: ['React.js', 'Laravel', 'MySQL', 'Pusher', 'Laravel Echo', 'REST APIs'],
-    metrics: [{ label: 'API Response Time', value: '-30%' }, { label: 'Agile Sprints', value: '6+' }],
+    metrics: [{ label: 'API Response Time', value: '~30%' }, { label: 'Agile Sprints', value: '6+' }],
     links: { demo: 'https://djobzy.com' },
   },
   {
@@ -157,7 +157,7 @@ export const projects = [
     summary: 'Customer-facing interior design platform with CMS-backed asset management and mobile-first responsive layouts.',
     description: 'Optimized core customer-facing pages with PHP, JavaScript and Bootstrap for faster load speeds and full cross-browser support. Built REST APIs and CMS backend integrations for scalable asset management and secure data delivery, resolved critical UI/UX bottlenecks, and engineered mobile-first responsive layouts using CSS Grid and Flexbox.',
     image: '/assets/images/project-portfolio-cms.svg', accent: 'amber', technologies: ['PHP', 'JavaScript', 'Bootstrap', 'REST APIs', 'CMS', 'CSS Grid', 'Flexbox'],
-    metrics: [{ label: 'Page Load Speed', value: '+35%' }, { label: 'UI/UX Issues Fixed', value: '20+' }],
+    metrics: [{ label: 'Page Load Speed', value: '~35%' }, { label: 'UI/UX Issues Fixed', value: '20+' }],
     links: { demo: 'https://bonito.in' },
   },
   {

@@ -100,7 +100,7 @@ export default function Hero() {
 
             <motion.div variants={item} className="mt-7 flex items-center gap-2.5">
               <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400/70" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
               </span>
               <span className="text-sm font-medium text-content-muted">{profile.availability}</span>
@@ -157,7 +157,7 @@ export default function Hero() {
         >
           <span className="text-2xs font-semibold uppercase tracking-label">Scroll Down</span>
           <span className="relative grid h-9 w-6 place-items-start justify-center rounded-full border border-line-strong pt-1.5">
-            <span className="h-1.5 w-1 animate-scroll-hint rounded-full bg-brand-gradient" />
+            <span className="h-1.5 w-1 rounded-full bg-brand-gradient" />
           </span>
         </motion.a>
       </div>
@@ -180,10 +180,7 @@ function HeroVisual({ shouldReduce }) {
       {/* Glow behind the composition */}
       <div
         aria-hidden="true"
-        className={cn(
-          'glow-blob left-1/2 top-1/2 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 bg-brand-500/70',
-          !shouldReduce && 'animate-pulse-glow'
-        )}
+        className="glow-blob left-1/2 top-1/2 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 bg-brand-500/70"
       />
 
       {/* Main frame */}
@@ -214,7 +211,7 @@ function HeroVisual({ shouldReduce }) {
           <p className="font-mono text-[11px] leading-relaxed text-content-muted">
             <span className="text-brand-500">const</span> dev <span className="text-emerald-500">=</span>{' '}
             <span className="text-amber-500">"Swayam"</span>
-            <span className="ml-0.5 inline-block h-3 w-[2px] translate-y-0.5 animate-caret-blink bg-primary align-middle" />
+            <span className="ml-0.5 inline-block h-3 w-[2px] translate-y-0.5 bg-primary align-middle" />
           </p>
         </motion.div>
 

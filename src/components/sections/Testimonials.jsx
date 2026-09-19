@@ -102,19 +102,11 @@ export default function Testimonials() {
               <motion.div
                 key={index}
                 custom={direction}
-                drag={shouldReduce ? false : 'x'}
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.16}
-                onDragEnd={(event, info) => {
-                  const swipe = info.offset.x;
-                  if (swipe < -70) goToIndex(index + 1, 1);
-                  else if (swipe > 70) goToIndex(index - 1, -1);
-                }}
                 initial={shouldReduce ? { opacity: 0 } : { opacity: 0, x: direction * 120 }}
                 animate={shouldReduce ? { opacity: 1 } : { opacity: 1, x: 0 }}
                 exit={shouldReduce ? { opacity: 0 } : { opacity: 0, x: direction * -120 }}
                 transition={{ duration: 0.45, ease: EASE }}
-                className="cursor-grab active:cursor-grabbing"
+                className="cursor-default"
               >
                 <TestimonialCard testimonial={testimonials[index]} />
               </motion.div>

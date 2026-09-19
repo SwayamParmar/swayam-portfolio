@@ -14,7 +14,8 @@ export default function AmbientBackground({
   showLines = true,
   intensity = 'full',
 }) {
-  const shouldReduce = useReducedMotion();
+  // useReducedMotion kept for accessibility checks in other branches
+  useReducedMotion();
   const soft = intensity === 'soft';
 
   return (
@@ -23,28 +24,9 @@ export default function AmbientBackground({
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-canvas" />
 
       {/* Drifting gradient blobs */}
-      <span
-        className={cn(
-          'glow-blob left-[-12%] top-[-8%] h-[34rem] w-[34rem] bg-brand-500/60',
-          !shouldReduce && 'animate-blob-drift'
-        )}
-      />
-      <span
-        className={cn(
-          'glow-blob right-[-14%] top-[6%] h-[30rem] w-[30rem] bg-emerald-500/50',
-          !shouldReduce && 'animate-blob-drift'
-        )}
-        style={{ animationDelay: '-6s' }}
-      />
-      {!soft && (
-        <span
-          className={cn(
-            'glow-blob bottom-[-16%] left-[32%] h-[28rem] w-[28rem] bg-brand-400/35',
-            !shouldReduce && 'animate-blob-drift'
-          )}
-          style={{ animationDelay: '-11s' }}
-        />
-      )}
+      <span className="glow-blob left-[-12%] top-[-8%] h-[34rem] w-[34rem] bg-brand-500/60" />
+      <span className="glow-blob right-[-14%] top-[6%] h-[30rem] w-[30rem] bg-emerald-500/50" />
+      {!soft && <span className="glow-blob bottom-[-16%] left-[32%] h-[28rem] w-[28rem] bg-brand-400/35" />}
 
       {/* Subtle grid */}
       {showGrid && <div className="absolute inset-0 grid-backdrop mask-fade-b opacity-70" />}

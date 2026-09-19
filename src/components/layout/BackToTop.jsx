@@ -15,7 +15,8 @@ export default function BackToTop() {
   const progress = useSpring(scrollYProgress, { stiffness: 130, damping: 26, restDelta: 0.001 });
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
-    setVisible(latest > 700);
+    const next = latest > 700;
+    setVisible((current) => (current === next ? current : next));
   });
 
   const scrollToTop = () => {

@@ -3,5 +3,5 @@ import App from './App';
 
 test('renders the hero headline', () => {
   render(<App />);
-  expect(screen.getByRole('heading', { name: /aman yadav/i, level: 1 })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /swayam parmar/i, level: 1 })).toBeInTheDocument();
 });

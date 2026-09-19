@@ -398,7 +398,9 @@
     filter: blur(72px);
     opacity: var(--glow-alpha);
     pointer-events: none;
-    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform, opacity;
   }
 
   .hairline {

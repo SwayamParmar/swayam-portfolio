@@ -30,7 +30,9 @@ export default function useActiveSection(ids = [], { offset = 96 } = {}) {
           }
         });
 
-        if (best && bestRatio > 0) setActive(best);
+        if (best && bestRatio > 0) {
+          setActive((current) => (current === best ? current : best));
+        }
       },
       {
         rootMargin: `-${offset}px 0px -45% 0px`,
@@ -41,15 +43,25 @@ export default function useActiveSection(ids = [], { offset = 96 } = {}) {
     const elements = ids.map((id) => document.getElementById(id)).filter(Boolean);
     elements.forEach((el) => observer.observe(el));
 
-    // Landing at the very top should always highlight the first link.
+    // Landing at the very top should always highlight the first link, but only
+    // once per animation frame so a scroll burst does not thrash React state.
+    let frameId = null;
     const handleScroll = () => {
-      if (window.scrollY < 80) setActive(ids[0]);
+      if (frameId !== null) return;
+      frameId = window.requestAnimationFrame(() => {
+        frameId = null;
+        if (window.scrollY < 80) {
+          setActive((current) => (current === ids[0] ? current : ids[0]));
+        }
+      });
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
     };
   }, [ids, offset]);
 
